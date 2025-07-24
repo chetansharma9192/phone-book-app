@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getContacts, addContact, updateContact, deleteContact } from './service/contactService';
 import ContactForm from './components/ContactForm';
 import ContactList from './components/ContactList';
+import './App.css';
 
 const App = () => {
   const [contacts, setContacts] = useState([]);
@@ -36,7 +37,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <h1>📞 Phone Book</h1>
       <ContactForm onSave={handleSave} selected={selected} />
       <ContactList contacts={contacts} onDelete={handleDelete} onEdit={handleEdit} />
